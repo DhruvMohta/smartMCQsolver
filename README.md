@@ -59,8 +59,6 @@ Attach these inputs before running:
 1. The competition data
 2. `jjinho/wikipedia-2023-07-faiss-index`
 3. `jjinho/wikipedia-20230701`
-4. Llama 3.1 8B Instruct, Transformers format (can be imported from transformers library)
-5. `srg9000/all-minilm-l6-v2`
 
 Set the accelerator to GPU T4 x2. Add your Weights and Biases key as a Kaggle secret named `WANDB`,
 and a Hugging Face token named `HF_TOKEN`.
@@ -79,10 +77,3 @@ question text, and asserts that no question appears on both sides of the split.
 ## Experiment tracking
 
 All runs are logged to Weights and Biases under the project `dl-genai-project`.
-
-## Known limitations
-
-* The Faiss wikipedia dump is from 2023, doesn't account for updated data till date. In order to make this into a deployable solution it is better to be using the wikipedia library.
-* The cross encoder reranking stage from Milestone 3 is not in the final notebook because its weights
-do not download reliably in this environment. Retrieval uses the bi encoder alone, which was
-measured at roughly a 73 percent top five hit rate.
